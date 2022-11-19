@@ -1,0 +1,22 @@
+#define UIP_CONF_TCP 1
+#define UIP_CONF_UDP 0
+
+//#define MODBUS_TCP_IS_CLIENT false
+//#define MODBUS_TCP_REUSE_TID_BITS 0
+//#define NO_MODULE_EVAL_TIMERS
+
+//#define REPEL_USE_HW_ACCEL true
+#define REPEL_ENABLE_LOGGING false
+#define ENABLE_EVAL_TIMERS false
+
+
+#define HEAPMEM_CONF_ARENA_SIZE 512
+#define WITH_REPEL true
+#define WITH_TINYDTLS false
+
+/* Save RAM */
+#define QUEUEBUF_CONF_NUM 4
+#define NBR_TABLE_CONF_MAX_NEIGHBORS 1
+#define NETSTACK_MAX_ROUTE_ENTRIES 1
+#define UIP_CONF_BUFFER_SIZE 512
+#define SICSLOWPAN_CONF_FRAG 0

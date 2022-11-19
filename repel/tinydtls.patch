@@ -1,0 +1,20 @@
+diff --git a/os/net/security/tinydtls/dtls-hmac.h b/os/net/security/tinydtls/dtls-hmac.h
+index 75b22c1..3d82640 100644
+--- a/os/net/security/tinydtls/dtls-hmac.h
++++ b/os/net/security/tinydtls/dtls-hmac.h
+@@ -20,6 +20,7 @@
+
+ #include "tinydtls.h"
+
++#ifndef REPEL_USE_HW_ACCEL
+ #ifdef WITH_SHA256
+ /** Aaron D. Gifford's implementation of SHA256
+  *  see http://www.aarongifford.com/ */
+@@ -45,6 +46,7 @@ dtls_hash_finalize(unsigned char *buf, dtls_hash_t ctx) {
+   return DTLS_SHA256_DIGEST_LENGTH;
+ }
+ #endif /* WITH_SHA256 */
++#endif /* REPEL_USE_HW_ACCEL */
+
+ void dtls_hmac_storage_init(void);
+

@@ -1,0 +1,21 @@
+# Contiki NG specific module Makefile
+# Include sub-modules, dependencies, and platform specific code
+
+TINYDTLS_PATH := os/net/security/tinydtls
+
+ifeq (${wildcard $(CONTIKI)/$(TINYDTLS_PATH)/Makefile},)
+  ${error Could not find the tinyDTLS submodule. Please run "git submodule update --init" and try again}
+endif
+
+# Use gnu99 instead of c99 as Contiki OS does not compile with flag -std=c99 and the library not with default on Z1
+CFLAGS += -DWITH_DTLS=1 -std=gnu99
+
+MODULES += os/lib/repel/tinydtls-support
+MODULES += $(TINYDTLS_PATH) ${addprefix $(TINYDTLS_PATH)/,aes sha2 ecc}
+
+MODULES +=  os/lib/repel/parser \
+            os/lib/repel/mac \
+            os/lib/repel/platform/contiki
+
+# Include Contiki OS specific platform functions
+CFLAGS += -I$(CONTIKI)/os/lib/repel/platform/contiki

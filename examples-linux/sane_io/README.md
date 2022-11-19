@@ -1,0 +1,1 @@
+A number of utility functions that simplify TCP socket and commandline input handling.

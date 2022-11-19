@@ -1,0 +1,3 @@
+[submodule "examples-linux/tinydtls"]
+	path = examples-linux/tinydtls
+	url = https://github.com/contiki-ng/tinydtls.git
